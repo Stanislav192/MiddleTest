@@ -7,19 +7,19 @@ def read_file(filename):
 #Порівнюємо вміст двох файлів.
 def compare_files(file1_content, file2_content):
     common_lines = []
-    different_lines = []
+    diff_lines = []
 
     for line in file1_content:
         if line in file2_content:
             common_lines.append(line)
         else:
-            different_lines.append(line)
+            diff_lines.append(line)
 
     for line in file2_content:
         if line not in file1_content:
-            different_lines.append(line)
+            diff_lines.append(line)
 
-    return common_lines, different_lines
+    return common_lines, diff_lines
 
 #Записуємо рядки у файл.
 def write_to_file(filename, lines):
